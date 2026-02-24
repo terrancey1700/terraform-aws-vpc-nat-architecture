@@ -1,1 +1,40 @@
+# Terraform working directory
+.terraform/
 
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+
+# Terraform lock file (keep this if you want version pinning)
+# .terraform.lock.hcl
+
+# Local variable files
+*.tfvars
+*.tfvars.json
+
+# Sensitive files
+terraform-key.pem
+
+# macOS
+.DS_Store
+
+# Professional practice:
+- Keep .terraform.lock.hcl committed
+- It locks provider versions
+- Ensures reproducibility across machines
+
+## Without .gitignore, you risk committing:
+  - State file (contains resource IDs, sometimes sensitive info)
+  - Private SSH key
+  - Entire .terraform directory
+  - Backend metadata
+That’s how engineers accidentally expose infrastructure
+
+# After creating .gitignore, run: git status
+  - You should NOT see:
+    - .terraform/
+    - terraform.tfstate
+    - terraform-key.pem
