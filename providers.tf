@@ -17,3 +17,5 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
+
+## I used "region = var.aws_region" so that means I need a variable to keep it clean and configurable.
