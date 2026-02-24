@@ -3,3 +3,8 @@ variable "aws_region" {
   type        = string
   default     = "us-east-2"
 }
+
+# After adding region in providers, variable is needed to make sure:
+  - Region is configurable
+  - Clean separation
+  - Environment-ready
